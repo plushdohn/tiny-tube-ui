@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { IconBrandGithub, IconSettings } from "@tabler/icons-svelte";
+  import { open } from "@tauri-apps/api/shell";
   import { createDialog, melt } from "@melt-ui/svelte";
   import type { Format } from "./types";
   import TagSelect from "./lib/TagSelect.svelte";
@@ -71,11 +72,14 @@
     </div>
   </div>
   <footer class="text-xs flex justify-end items-center gap-1">
-    <a href="/" class="outline-none focus:ring-1 ring-zinc-600 rounded p-0.5">
+    <button
+      on:click={() => open("https://github.com/plushdohn/tiny-tube-ui")}
+      class="outline-none focus:ring-1 ring-zinc-600 rounded p-0.5"
+    >
       <IconBrandGithub
         class="w-4 h-4 text-zinc-600 hover:text-zinc-400 transition-colors"
       />
-    </a>
+    </button>
     <button
       class="outline-none focus:ring-1 ring-zinc-600 rounded p-0.5"
       use:melt={$trigger}
