@@ -21,6 +21,21 @@
     folderPath = localStorage.getItem("download_path");
   });
 
+  function handlePaste(e: ClipboardEvent) {
+    const clipboardData = e.clipboardData;
+    const pastedText = clipboardData?.getData("text");
+
+    if (!pastedText) return;
+
+    downloads = [
+      ...downloads,
+      {
+        url: pastedText,
+        format,
+      },
+    ];
+  }
+
   function handleSubmit(e: Event) {
     e.preventDefault();
 
@@ -55,6 +70,7 @@
       <input
         placeholder="Paste a video or playlist link..."
         bind:value={url}
+        on:paste={handlePaste}
         class="py-2 px-3 rounded border bg-zinc-800 border-zinc-700 text-zinc-100 outline-none focus:ring-1 ring-zinc-600"
       />
     </form>
