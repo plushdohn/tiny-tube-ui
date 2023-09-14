@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createDialog, melt } from "@melt-ui/svelte";
   import { open as openBrowseDialog } from "@tauri-apps/api/dialog";
-  import { IconFolder } from "@tabler/icons-svelte";
+  import { FolderIcon } from "lucide-svelte";
   import { fade, scale } from "svelte/transition";
 
   export let dialog: ReturnType<typeof createDialog>;
@@ -55,7 +55,7 @@
             class="px-3 hover:bg-zinc-900 transition-colors focus:ring-1 ring-zinc-500"
             on:click={handleOpenFolderPath}
           >
-            <IconFolder class="w-4 h-4 text-zinc-400" />
+            <FolderIcon class="w-4 h-4 text-zinc-400" />
           </button>
         </div>
       </div>

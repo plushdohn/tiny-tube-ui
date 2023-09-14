@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { IconBrandGithub, IconSettings } from "@tabler/icons-svelte";
+  import { GithubIcon, SettingsIcon } from "lucide-svelte";
   import { open } from "@tauri-apps/api/shell";
   import { createDialog, melt } from "@melt-ui/svelte";
   import type { Format } from "./types";
@@ -92,7 +92,7 @@
       on:click={() => open("https://github.com/plushdohn/tiny-tube-ui")}
       class="outline-none focus:ring-1 ring-zinc-600 rounded p-0.5"
     >
-      <IconBrandGithub
+      <GithubIcon
         class="w-4 h-4 text-zinc-600 hover:text-zinc-400 transition-colors"
       />
     </button>
@@ -100,7 +100,7 @@
       class="outline-none focus:ring-1 ring-zinc-600 rounded p-0.5"
       use:melt={$trigger}
     >
-      <IconSettings
+      <SettingsIcon
         class="w-4 h-4 text-zinc-600 hover:text-zinc-400 transition-colors"
       />
     </button>
